@@ -63,22 +63,36 @@ public class Operaciones {
     public void calcoseno(double n1){
         result=Math.cos(n1);
         result=Double.parseDouble(df.format(result));
-    
     }
     
     public void caltangente(double n1) {
-    result= Math.tan(n1);
-    result = Math.sin(Math.toRadians(n1)); 
-    result=Double.parseDouble(df.format(result));
+        result= Math.tan(n1);
+        result = Math.sin(Math.toRadians(n1)); 
+        result=Double.parseDouble(df.format(result));
     }
     
     public void calraizcubica(double n1) {
-    result= Math.cbrt(n1);
-    result=Double.parseDouble(df.format(result));
+        result= Math.cbrt(n1);
+        result=Double.parseDouble(df.format(result));
     }
     
      public void calrandom (double n1) {
         Random random = new Random();
         result = random.nextInt((int) n1);}
      
+     public void calprimo (double n1){
+         boolean primo = true;
+        if (n1 < 2) {
+        primo = false;
+        } else {
+        for (int i = 2; i < n1; i++) {
+            if (n1 % i == 0) {
+                primo = false;
+                break;
+                }
+            }
+        }
+        result = primo ? 1 : 0;
+    }
 }
+     

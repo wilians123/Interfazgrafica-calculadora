@@ -4,54 +4,15 @@
  */
 package interfazcalculadora;
 
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
-public class MiJFrame extends JFrame {
-
-    private BufferedImage imagen;
-
-    public MiJFrame () {
-        try {
-            // Cargar la imagen desde el paquete fondo
-            imagen = ImageIO.read (getClass ().getResource ("fondo/fondo2.jpeg"));
-        } catch (IOException e) {
-            e.printStackTrace ();
-        }
-        // Crear un JPanel personalizado
-        JPanel panel = new JPanel () {
-            @Override
-            public void paintComponent (Graphics g) {
-                super.paintComponent (g);
-                // Dibujar la imagen en el panel
-                g.drawImage (imagen, 0, 0, getWidth (), getHeight (), this);
-            }
-        };
-        
-        
-        // Agregar el panel al JFrame
-        this.setContentPane (panel);
-        this.setSize (500, 500);
-        this.setVisible (true);
-    }
-    
-
-    public static void main (String[] args) {
-        new MiJFrame ();
-    }
-}
 
 public class Principal extends javax.swing.JFrame {
+    Operacionesespeciales operar=new Operacionesespeciales("Especial", "azul", 12, "abc123", "Will");
 
-    Operaciones operar = new Operaciones();
     
         //Declaracion de variables
-        double num1;
-        double num2;
+        double num1, num2;
+        
         
     
     public Principal() {
@@ -69,6 +30,19 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        bg = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        btnrandom = new javax.swing.JButton();
+        labelresult = new javax.swing.JLabel();
+        btnlimpiar = new javax.swing.JButton();
+        btndivi = new javax.swing.JButton();
+        btnprimo = new javax.swing.JButton();
+        btnraiz = new javax.swing.JButton();
+        btnmedia = new javax.swing.JButton();
+        btnpotencia = new javax.swing.JButton();
+        btnlogaritmo = new javax.swing.JButton();
+        btnseno = new javax.swing.JButton();
+        btntangente = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -77,177 +51,44 @@ public class Principal extends javax.swing.JFrame {
         btnsuma = new javax.swing.JButton();
         btnmulti = new javax.swing.JButton();
         btnresta = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        labelresult = new javax.swing.JLabel();
-        btndivi = new javax.swing.JButton();
-        btnraiz = new javax.swing.JButton();
-        btnmedia = new javax.swing.JButton();
-        btnpotencia = new javax.swing.JButton();
-        btnlogaritmo = new javax.swing.JButton();
-        btnseno = new javax.swing.JButton();
-        btntangente = new javax.swing.JButton();
         btnraizcubica = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         btncoseno = new javax.swing.JButton();
-        btnrandom = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        btnlimpiar = new javax.swing.JButton();
-        btnprimo = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setForeground(new java.awt.Color(255, 51, 102));
         setLocation(new java.awt.Point(550, 200));
+        setPreferredSize(new java.awt.Dimension(400, 450));
+        setResizable(false);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("CALCULADORA");
+        bg.setBackground(new java.awt.Color(255, 255, 255));
+        bg.setMinimumSize(new java.awt.Dimension(450, 450));
+        bg.setPreferredSize(new java.awt.Dimension(400, 450));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setText("Primer numero:");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setText("Segundo numero:");
-
-        campoN1.setBackground(new java.awt.Color(204, 255, 204));
-        campoN1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        campoN1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoN1ActionPerformed(evt);
-            }
-        });
-
-        campoN2.setBackground(new java.awt.Color(204, 255, 204));
-        campoN2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        campoN2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoN2ActionPerformed(evt);
-            }
-        });
-
-        btnsuma.setBackground(new java.awt.Color(255, 255, 204));
-        btnsuma.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnsuma.setText("+");
-        btnsuma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsumaActionPerformed(evt);
-            }
-        });
-
-        btnmulti.setBackground(new java.awt.Color(255, 255, 204));
-        btnmulti.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnmulti.setText("x");
-        btnmulti.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmultiActionPerformed(evt);
-            }
-        });
-
-        btnresta.setBackground(new java.awt.Color(255, 255, 204));
-        btnresta.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnresta.setText("-");
-        btnresta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnrestaActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setText("Resultado");
-
-        btndivi.setBackground(new java.awt.Color(255, 255, 204));
-        btndivi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btndivi.setText("/");
-        btndivi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btndiviActionPerformed(evt);
-            }
-        });
-
-        btnraiz.setBackground(new java.awt.Color(255, 255, 204));
-        btnraiz.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnraiz.setText("√ ");
-        btnraiz.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnraizActionPerformed(evt);
-            }
-        });
-
-        btnmedia.setBackground(new java.awt.Color(255, 255, 204));
-        btnmedia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnmedia.setText("media");
-        btnmedia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmediaActionPerformed(evt);
-            }
-        });
-
-        btnpotencia.setBackground(new java.awt.Color(255, 255, 204));
-        btnpotencia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnpotencia.setText("potencia");
-        btnpotencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnpotenciaActionPerformed(evt);
-            }
-        });
-
-        btnlogaritmo.setBackground(new java.awt.Color(255, 255, 204));
-        btnlogaritmo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnlogaritmo.setText("Ln");
-        btnlogaritmo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnlogaritmoActionPerformed(evt);
-            }
-        });
-
-        btnseno.setBackground(new java.awt.Color(255, 255, 204));
-        btnseno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnseno.setText("seno");
-        btnseno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsenoActionPerformed(evt);
-            }
-        });
-
-        btntangente.setBackground(new java.awt.Color(255, 255, 204));
-        btntangente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btntangente.setText("Tang");
-        btntangente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btntangenteActionPerformed(evt);
-            }
-        });
-
-        btnraizcubica.setBackground(new java.awt.Color(255, 255, 204));
-        btnraizcubica.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnraizcubica.setText("3√ ");
-        btnraizcubica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnraizcubicaActionPerformed(evt);
-            }
-        });
-
-        btncoseno.setBackground(new java.awt.Color(255, 255, 204));
-        btncoseno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btncoseno.setText("coseno");
-        btncoseno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncosenoActionPerformed(evt);
-            }
-        });
+        jPanel1.setMinimumSize(new java.awt.Dimension(450, 470));
+        jPanel1.setPreferredSize(new java.awt.Dimension(400, 450));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnrandom.setBackground(new java.awt.Color(255, 255, 204));
         btnrandom.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnrandom.setText("Random");
+        btnrandom.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnrandom.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btnrandom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnrandomActionPerformed(evt);
             }
         });
+        jPanel1.add(btnrandom, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, 40));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Para un optimo funcionamiento por favor llena ambos espacios");
+        labelresult.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        labelresult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelresult.setText("0");
+        jPanel1.add(labelresult, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 120, 40));
 
         btnlimpiar.setBackground(new java.awt.Color(255, 255, 204));
         btnlimpiar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -257,6 +98,17 @@ public class Principal extends javax.swing.JFrame {
                 btnlimpiarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnlimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 52, 72));
+
+        btndivi.setBackground(new java.awt.Color(255, 255, 204));
+        btndivi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btndivi.setText("/");
+        btndivi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndiviActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btndivi, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, 40));
 
         btnprimo.setBackground(new java.awt.Color(255, 255, 204));
         btnprimo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -266,124 +118,168 @@ public class Principal extends javax.swing.JFrame {
                 btnprimoActionPerformed(evt);
             }
         });
+        jPanel1.add(btnprimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, -1, 40));
+
+        btnraiz.setBackground(new java.awt.Color(255, 255, 204));
+        btnraiz.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnraiz.setText("√ ");
+        btnraiz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnraizActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnraiz, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 57, 40));
+
+        btnmedia.setBackground(new java.awt.Color(255, 255, 204));
+        btnmedia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnmedia.setText("media");
+        btnmedia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmediaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnmedia, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 80, 40));
+
+        btnpotencia.setBackground(new java.awt.Color(255, 255, 204));
+        btnpotencia.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnpotencia.setText("potencia");
+        btnpotencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnpotenciaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnpotencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 90, 40));
+
+        btnlogaritmo.setBackground(new java.awt.Color(255, 255, 204));
+        btnlogaritmo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnlogaritmo.setText("Ln");
+        btnlogaritmo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlogaritmoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnlogaritmo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 60, 40));
+
+        btnseno.setBackground(new java.awt.Color(255, 255, 204));
+        btnseno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnseno.setText("seno");
+        btnseno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsenoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnseno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 70, 40));
+
+        btntangente.setBackground(new java.awt.Color(255, 255, 204));
+        btntangente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btntangente.setText("Tang");
+        btntangente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntangenteActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btntangente, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 70, 40));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel2.setText("CALCULADORA");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("Primer numero:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 135, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setText("Segundo numero:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 138, -1));
+
+        campoN1.setBackground(new java.awt.Color(204, 255, 255));
+        campoN1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        campoN1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoN1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(campoN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 140, -1));
+
+        campoN2.setBackground(new java.awt.Color(204, 255, 255));
+        campoN2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        campoN2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoN2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(campoN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 140, -1));
+
+        btnsuma.setBackground(new java.awt.Color(255, 255, 204));
+        btnsuma.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnsuma.setText("+");
+        btnsuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsumaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnsuma, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 40));
+
+        btnmulti.setBackground(new java.awt.Color(255, 255, 204));
+        btnmulti.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnmulti.setText("x");
+        btnmulti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmultiActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnmulti, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, 40));
+
+        btnresta.setBackground(new java.awt.Color(255, 255, 204));
+        btnresta.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnresta.setText("-");
+        btnresta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrestaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnresta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 40));
+
+        btnraizcubica.setBackground(new java.awt.Color(255, 255, 204));
+        btnraizcubica.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnraizcubica.setText("3√ ");
+        btnraizcubica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnraizcubicaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnraizcubica, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 57, 40));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel4.setText("Resultado");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, -1));
+
+        btncoseno.setBackground(new java.awt.Color(255, 255, 204));
+        btncoseno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btncoseno.setText("coseno");
+        btncoseno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncosenoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btncoseno, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 80, 40));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo/fondo2.jpeg"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 400, 510));
+
+        bg.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(labelresult, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnmedia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnpotencia)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnlogaritmo, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btntangente))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnsuma)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnmulti)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btndivi)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnresta)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnraiz, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnraizcubica, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnseno)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btncoseno)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnrandom)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnprimo)
-                                .addGap(25, 25, 25)))))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(campoN2)
-                    .addComponent(campoN1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnlimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(campoN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(campoN2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(btnlimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnsuma)
-                    .addComponent(btndivi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnraiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnraizcubica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnmulti)
-                    .addComponent(btnresta, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnmedia)
-                    .addComponent(btnpotencia)
-                    .addComponent(btnlogaritmo)
-                    .addComponent(btntangente))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnseno)
-                    .addComponent(btncoseno)
-                    .addComponent(btnrandom)
-                    .addComponent(btnprimo))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(labelresult))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18))
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -400,11 +296,10 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA RESTAR
     private void btnrestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrestaActionPerformed
-        entrada();
-        
-        operar.calresta(num1,num2);
-        
-        labelresult.setText(String.valueOf(operar.result));
+         double num1 = Double.parseDouble(campoN1.getText());
+        double num2 = Double.parseDouble(campoN2.getText());
+        double resultado = operar.calresta(num1,num2);
+        labelresult.setText(String.valueOf(resultado));
         
         campoN1.requestFocus();
         campoN1.selectAll();
@@ -413,12 +308,10 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA DIVIDIR
     private void btndiviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndiviActionPerformed
-        entrada();
-        
-        operar.caldivi(num1,num2);
-        
-        labelresult.setText(String.valueOf(operar.result));
-        
+         double num1 = Double.parseDouble(campoN1.getText());
+        double num2 = Double.parseDouble(campoN2.getText());
+        double resultado = operar.caldivi(num1,num2);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btndiviActionPerformed
@@ -426,27 +319,19 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA SUMAR
     private void btnsumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsumaActionPerformed
-    
-        entrada();
-        
-        operar.calsuma(num1,num2);
-        
-        labelresult.setText(String.valueOf(operar.result));
-        
-        campoN1.requestFocus();
-        campoN1.selectAll();
+        double num1 = Double.parseDouble(campoN1.getText());
+        double num2 = Double.parseDouble(campoN2.getText());
+        double resultado = operar.calsuma(num1,num2);
+        labelresult.setText(String.valueOf(resultado));
     }//GEN-LAST:event_btnsumaActionPerformed
 
     
     //BOTON PARA MULTIPLICAR
     private void btnmultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmultiActionPerformed
-       
-        entrada();
-        
-        operar.calmulti(num1,num2);
-        
-        labelresult.setText(String.valueOf(operar.result));
-        
+        double num1 = Double.parseDouble(campoN1.getText());
+        double num2 = Double.parseDouble(campoN2.getText());
+        double resultado = operar.calmulti(num1,num2);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btnmultiActionPerformed
@@ -454,12 +339,10 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA RAIZ
     private void btnraizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnraizActionPerformed
-           entrada();
-        
-        operar.calraiz(num1);
-        num2=1;
-        labelresult.setText(String.valueOf(operar.result));
-        
+      
+        double num1 = Double.parseDouble(campoN1.getText());
+        double resultado = operar.calraiz(num1);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btnraizActionPerformed
@@ -467,12 +350,10 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA CALCULAR MEDIA
     private void btnmediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmediaActionPerformed
-           entrada();
-        
-        operar.calmedia(num1,num2);
-        
-        labelresult.setText(String.valueOf(operar.result));
-        
+        double num1 = Double.parseDouble(campoN1.getText());
+        double num2 = Double.parseDouble(campoN2.getText());
+        double resultado = operar.calmedia(num1,num2);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btnmediaActionPerformed
@@ -480,12 +361,10 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA CALCULAR POTENCIA
     private void btnpotenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpotenciaActionPerformed
-           entrada();
-        
-        operar.calpotencia(num1,num2);
-        
-        labelresult.setText(String.valueOf(operar.result));
-        
+        double num1 = Double.parseDouble(campoN1.getText());
+        double num2 = Double.parseDouble(campoN2.getText());
+        double resultado = operar.calpotencia(num1,num2);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btnpotenciaActionPerformed
@@ -493,12 +372,9 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA CALCULAR LOGARITMO
     private void btnlogaritmoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlogaritmoActionPerformed
-        entrada();
-        
-        operar.callogaritmo(num1);
-        num2= 0;
-        labelresult.setText(String.valueOf(operar.result));
-        
+        double num1 = Double.parseDouble(campoN1.getText());
+        double resultado = operar.callogaritmo(num1);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btnlogaritmoActionPerformed
@@ -506,12 +382,9 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA SENO
     private void btnsenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsenoActionPerformed
-            entrada();
-        
-        operar.calseno(num1);
-        num2= 0;
-        labelresult.setText(String.valueOf(operar.result));
-        
+        double num1 = Double.parseDouble(campoN1.getText());
+        double resultado = operar.calseno(num1);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btnsenoActionPerformed
@@ -519,12 +392,9 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA TANGENTE
     private void btntangenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntangenteActionPerformed
-           entrada();
-        
-        operar.caltangente(num1);
-        num2= 0;
-        labelresult.setText(String.valueOf(operar.result));
-        
+        double num1 = Double.parseDouble(campoN1.getText());
+        double resultado = operar.caltangente(num1);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btntangenteActionPerformed
@@ -532,12 +402,9 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA RAIZ CUBICA
     private void btnraizcubicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnraizcubicaActionPerformed
-         entrada();
-        
-        operar.calraizcubica(num1);
-        num2= 0;
-        labelresult.setText(String.valueOf(operar.result));
-        
+        double num1 = Double.parseDouble(campoN1.getText());
+        double resultado = operar.calraizcubica(num1);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btnraizcubicaActionPerformed
@@ -545,23 +412,17 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA COSENO
     private void btncosenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncosenoActionPerformed
-        entrada();
-        
-        operar.calcoseno(num1);
-        num2= 0;
-        labelresult.setText(String.valueOf(operar.result));
-        
+        double num1 = Double.parseDouble(campoN1.getText());
+        double resultado = operar.calcoseno(num1);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btncosenoActionPerformed
 
     private void btnrandomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrandomActionPerformed
-        entrada();
-        
-        operar.calrandom(num1);
-        num2= 0;
-        labelresult.setText(String.valueOf(operar.result));
-        
+        double num1 = Double.parseDouble(campoN1.getText());
+        double resultado = operar.calrandom(num1);
+        labelresult.setText(String.valueOf(resultado));
         campoN1.requestFocus();
         campoN1.selectAll();
     }//GEN-LAST:event_btnrandomActionPerformed
@@ -575,11 +436,10 @@ public class Principal extends javax.swing.JFrame {
     
     //BOTON PARA  NUMERO PRIMO
     private void btnprimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprimoActionPerformed
-         entrada();
         
-        operar.calprimo(num1);
-        num2= 0;
-        labelresult.setText(String.valueOf(operar.result));
+      double num1 = Double.parseDouble(campoN1.getText());
+      boolean resultado = operar.calprimo((int) num1);
+      labelresult.setText(String.valueOf(resultado));
         
         campoN1.requestFocus();
         campoN1.selectAll();
@@ -623,6 +483,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bg;
     private javax.swing.JButton btncoseno;
     private javax.swing.JButton btndivi;
     private javax.swing.JButton btnlimpiar;
@@ -645,7 +506,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelresult;
     // End of variables declaration//GEN-END:variables
 
